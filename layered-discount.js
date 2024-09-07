@@ -7,17 +7,27 @@
  */ 
 
 function productsDiscount(quantity){
-    const first100 = 100;
-    const second100 = 90;
-    const above100 = 70;
+    const first100Price = 100;
+    const second100Price = 90;
+    const above200Price = 70;
     if(quantity <= 100){
-        const discount1 = first100;
-        return discount1;
+        const totalExpense = first100 * quantity;
+        return totalExpense;
     }else if(quantity <= 200){
-        const discount2 = (quantity * second100) + first100; 
-        return discount2;
+        const first100total = 100 * first100Price;
+        const after100Quantity = quantity - 100;
+        const totalAfter100 = after100Quantity * second100Price;
+        const totalExpense = first100total + totalAfter100;
+        return totalExpense
+    }else{
+        const first100total = 100 * first100Price; 
+        const second100Total = 100 * second100Price;
+        const restQuantity = quantity - 200;
+        const more200Price = restQuantity * above200Price;
+        const totalExpense = first100total + second100Total + more200Price;
+        return totalExpense;
     }
 }
 
-const totalProducts = productsDiscount(90);
+const totalProducts = productsDiscount(203);
 console.log(totalProducts);
