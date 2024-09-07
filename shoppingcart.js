@@ -1,3 +1,5 @@
+// how much you expense from shopping cart.
+
 const products = [
     {name: 'Shampoo', price: 1200, quantity: 2},
     {name: 'pant', price: 700, quantity: 3},
@@ -6,7 +8,12 @@ const products = [
 ];
 
 function cartTotal(products){
-    console.log(products);
+    let sum = 0;
+    for(const product of products){
+       const totalExpense = product.price * product.quantity;
+       sum = sum + totalExpense;
+    }
+    return sum;
 }    
 
 const shoppingCart = cartTotal(products);
