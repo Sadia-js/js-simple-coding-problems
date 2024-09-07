@@ -1,3 +1,5 @@
+// Sum of total prices
+
 const products = [
     {name: 'Shampoo', price: 1200},
     {name: 'pant', price: 700},
