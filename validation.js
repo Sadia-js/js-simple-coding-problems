@@ -42,11 +42,11 @@ const price = getPrice({name: 'Kodom', price: 35, color: 'blue'});
 // console.log(price);
 
 function getSecond(numbers){
-    if(Array.isArray(numbers) !== 'array'){
+    if(Array.isArray(numbers) !== true){
         return 'Please provide a valid array';
     }
     const second = numbers[1];
     return second;
 }
-const second = getSecond({name: 'sadia', marks: 90});
+const second = getSecond([3, 7, 9]);
 console.log(second);
